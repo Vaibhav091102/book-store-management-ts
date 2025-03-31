@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx", // ✅ For React 17+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "moduleResolution": "node", // ✅ Ensures proper module resolution
+    "types": ["react", "react-dom", "node"] // ✅ Add react and react-dom types
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

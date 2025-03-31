@@ -1,0 +1,1 @@
+{"root":["../index.ts","../confic/db.ts","../controller/product.controller.ts","../middleware/authmiddleware.ts","../middleware/uplode.ts","../models/cart.ts","../models/product.ts","../models/user.ts","../models/seller.ts","../routes/authroutes.ts","../routes/cartroutes.ts","../routes/product.route.ts","../routes/profile.ts"],"version":"5.8.2"}
