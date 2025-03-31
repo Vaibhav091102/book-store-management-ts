@@ -33,7 +33,7 @@ const Login: React.FC<LoginProps> = ({ setUser, setSeller, setCartLength }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://book-store-management-ts.onrender.com/api/auth/login",
         formData
       );
 
@@ -71,7 +71,7 @@ const Login: React.FC<LoginProps> = ({ setUser, setSeller, setCartLength }) => {
   useEffect(() => {
     if (localUser?._id) {
       axios
-        .get(`http://localhost:5000/api/cart/${localUser._id}`)
+        .get(`https://book-store-management-ts.onrender.com/api/cart/${localUser._id}`)
         .then((res) => {
           const formattedItems = Array.isArray(res.data.cart)
             ? res.data.cart
