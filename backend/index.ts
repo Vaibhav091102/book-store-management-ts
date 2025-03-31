@@ -117,8 +117,8 @@ app.get(
           sellerId: product.user_id,
           productId: product._id,
           image: book.image
-            ? `http://localhost:5000/${book.image.replace(/\\/g, "/")}`
-            : "http://localhost:5000/default-image.jpg", // Fallback image
+            ? `https://book-store-management-ts-1.onrender.com/${book.image.replace(/\\/g, "/")}`
+            : "https://book-store-management-ts-1.onrender.com/default-image.jpg", // Fallback image
         },
       });
     } catch (error) {
@@ -152,7 +152,7 @@ app.get(
         ...product.toObject(),
         books: product.books.map((book: any) => ({
           ...book.toObject(),
-          image: `http://localhost:5000/${book.image.replace(/\\/g, "/")}`,
+          image: `https://book-store-management-ts-1.onrender.com/${book.image.replace(/\\/g, "/")}`,
         })),
       }));
 
