@@ -30,12 +30,12 @@ interface Book {
 // ✅ Load environment variables
 dotenv.config();
 
-if (!process.env.PORT) {
+if (!process.env.PORt) {
   throw new Error("PORT environment variable is not defined");
 }
 
 const app: Application = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORt || 5000;
 
 // ✅ Middleware
 
