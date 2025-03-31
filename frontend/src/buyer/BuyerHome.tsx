@@ -53,7 +53,7 @@ const BuyerHome: React.FC<BuyerHomeProps> = ({ cartLength }) => {
     }
 
     axios
-      .get("http://localhost:5000/api/get-all-product", {
+      .get("https://book-store-management-ts.onrender.com/api/get-all-product", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
