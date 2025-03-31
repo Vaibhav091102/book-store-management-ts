@@ -61,7 +61,7 @@ app.use(
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' https://book-store-management-ts-1.onrender.com data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+    "default-src 'self'; img-src 'self' https://localhost//5000 data.onrender.com data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
   );
   res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
