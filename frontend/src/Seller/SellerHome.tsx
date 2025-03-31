@@ -61,7 +61,7 @@ export default function SellerHome({ reload }: SellerHomeProps) {
 
     axios
       .get<GetAllProductsResponse>(
-        "http://localhost:5000/api/get-all-product",
+        "https://book-store-management-ts.onrender.com/api/get-all-product",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
