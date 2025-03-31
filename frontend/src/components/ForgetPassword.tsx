@@ -31,7 +31,7 @@ const ForgetPassword: React.FC = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/forget-password",
+        "https://book-store-management-ts.onrender.com/api/auth/forget-password",
         formData
       );
 
