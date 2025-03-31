@@ -17,7 +17,7 @@ const MyBook: React.FC<MyBookProps> = ({ user }) => {
     const fetchBooks = async () => {
       try {
         const res: AxiosResponse<ApiResponse<{ books: Book[] }[]>> =
-          await axios.get(`http://localhost:5000/api/products/${user._id}`);
+          await axios.get(`https://book-store-management-ts.onrender.com/api/products/${user._id}`);
 
         const bookData = res.data.data;
         setBooks(
