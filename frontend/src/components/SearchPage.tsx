@@ -36,7 +36,7 @@ const SearchPage = () => {
 
       try {
         const res: AxiosResponse<ApiResponse> = await axios.get(
-          `http://localhost:5000/api/get-books-by-search?search=${query}`
+          `https://book-store-management-ts.onrender.com/api/get-books-by-search?search=${query}`
         );
 
         setBooks(res.data.data || []);
