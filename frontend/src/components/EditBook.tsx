@@ -16,13 +16,13 @@ const EditBook = () => {
     const fetchBookDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/single-product-details/${bookId}`
+          `https://book-store-management-ts.onrender.com/api/single-product-details/${bookId}`
         );
         setBook(response.data.data);
 
         // Set preview for existing image
         if (response.data.data?.image) {
-          setPreview(`http://localhost:5000/${response.data.data.image}`);
+          setPreview(`https://book-store-management-ts.onrender.com/${response.data.data.image}`);
         }
       } catch (error) {
         console.error("Error fetching book:", error);
@@ -62,7 +62,7 @@ const EditBook = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/products/update/${bookId}`,
+        `https://book-store-management-ts.onrender.com/api/products/update/${bookId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
