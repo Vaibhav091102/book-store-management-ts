@@ -50,7 +50,7 @@ export default function Profile() {
         const response = await axios.get<{
           user: User;
           sellerInfo?: SellerInfo;
-        }>(`http://localhost:5000/api/profile/${id}`);
+        }>(`https://book-store-management-ts.onrender.com/api/profile/${id}`);
 
         const { user, sellerInfo } = response.data;
         setProfileData(user);
@@ -77,7 +77,7 @@ export default function Profile() {
   const handleSave = async () => {
     try {
       const response = await axios.put<{ user: User; sellerInfo?: SellerInfo }>(
-        `http://localhost:5000/api/profile/update/${id}`,
+        `https://book-store-management-ts.onrender.com/api/profile/update/${id}`,
         formData
       );
 
