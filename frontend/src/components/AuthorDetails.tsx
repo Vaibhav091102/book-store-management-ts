@@ -44,7 +44,7 @@ const AuthorDetails: React.FC<AuthorDetailsProps> = ({ user, cartLength }) => {
 
       try {
         const response: AxiosResponse<BooksResponse> = await axios.get(
-          `http://localhost:5000/api/books-by-author/${authorName}`
+          `https://book-store-management-ts.onrender.com/api/books-by-author/${authorName}`
         );
         console.log(response);
         if (response.data?.success) {
