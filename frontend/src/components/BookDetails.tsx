@@ -27,7 +27,7 @@ const BookDetails: React.FC<BookDetailsProps> = ({
   const handleAddToCart = async (book: Book) => {
     try {
       const response: AxiosResponse<{ success: boolean; message: string }> =
-        await axios.post("http://localhost:5000/api/cart/add", {
+        await axios.post("https://book-store-management-ts.onrender.com/api/cart/add", {
           userId: user?._id,
           productId: book.productId,
           bookId: book._id,
@@ -50,7 +50,7 @@ const BookDetails: React.FC<BookDetailsProps> = ({
     try {
       const response: AxiosResponse<{ success: boolean; message: string }> =
         await axios.delete(
-          `http://localhost:5000/api/products/delete-book/${bookId}`
+          `https://book-store-management-ts.onrender.com/api/products/delete-book/${bookId}`
         );
 
       if (response.data.success) {
@@ -69,7 +69,7 @@ const BookDetails: React.FC<BookDetailsProps> = ({
     const fetchBookDetails = async () => {
       try {
         const response: AxiosResponse<{ data: Book }> = await axios.get(
-          `http://localhost:5000/api/single-product-details/${bookId}`
+          `https://book-store-management-ts.onrender.com/api/single-product-details/${bookId}`
         );
         setBook(response.data.data);
       } catch (error) {
