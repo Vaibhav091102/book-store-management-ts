@@ -37,6 +37,10 @@ if (!process.env.PORt) {
 const app: Application = express();
 const PORT = process.env.PORt || 5000;
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Home Page");
+});
+
 // ✅ Middleware
 
 app.use(helmet());
