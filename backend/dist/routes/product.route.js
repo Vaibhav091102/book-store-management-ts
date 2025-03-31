@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const { getProducts, createProduct, deleteProduct, updateProduct, } = require("../controller/product.controller");
 const uplode_1 = __importDefault(require("../middleware/uplode"));
+const { getProducts, createProduct, deleteProduct, updateProduct, } = require("../controller/product.controller");
 const router = express_1.default.Router();
 router.get("/:id", getProducts);
 router.post("/:id", uplode_1.default.single("image"), createProduct);

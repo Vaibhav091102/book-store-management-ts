@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const multer_1 = __importDefault(require("multer"));
-// ✅ Environment-based upload directory
-const UPLOAD_DIR = process.env.UPLOAD_DIR || "./uploads";
+// ✅ Define upload directory
+const UPLOAD_DIR = "./uploads";
 // ✅ Multer storage configuration
 const storage = multer_1.default.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, UPLOAD_DIR); // Use environment variable for upload path
+        cb(null, UPLOAD_DIR); // Save images in 'uploads' folder
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}-${file.originalname}`);
@@ -22,8 +22,7 @@ const fileFilter = (req, file, cb) => {
         cb(null, true); // Accept the file
     }
     else {
-        const error = new Error("Invalid file type. Only JPEG, PNG, and WEBP are allowed.");
-        cb(error); // Cast error to match multer's expected type
+        cb(new Error("Invalid file type. Only JPEG, PNG, and WEBP are allowed."));
     }
 };
 // ✅ Multer configuration with size limit and error handling
