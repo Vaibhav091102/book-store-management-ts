@@ -37,7 +37,7 @@ const Cart: React.FC<CartProps> = ({ user, setCartLength }) => {
   }
   const handleCheckout = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/clearall/${user._id}`);
+      await axios.delete(`https://book-store-management-ts.onrender.com/api/cart/clearall/${user._id}`);
       setCartItems([]);
       setCartLength(0);
       navigate("/confirmation");
@@ -53,7 +53,7 @@ const Cart: React.FC<CartProps> = ({ user, setCartLength }) => {
   useEffect(() => {
     if (user?._id) {
       axios
-        .get<CartResponse>(`http://localhost:5000/api/cart/${user._id}`)
+        .get<CartResponse>(`https://book-store-management-ts.onrender.com/api/cart/${user._id}`)
         .then((res) => {
           console.log("API Response:", res.data);
 
@@ -103,7 +103,7 @@ const Cart: React.FC<CartProps> = ({ user, setCartLength }) => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/cart/update/${user._id}/${bookId}`,
+        `https://book-store-management-ts.onrender.com/api/cart/update/${user._id}/${bookId}`,
         {
           quantity: updatedCartItems.find((item) => item.book?._id === bookId)
             ?.quantity,
@@ -121,7 +121,7 @@ const Cart: React.FC<CartProps> = ({ user, setCartLength }) => {
   const handleRemove = async (bookId: string) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/cart/clear/${user._id}/${bookId}`
+        `https://book-store-management-ts.onrender.com/api/cart/clear/${user._id}/${bookId}`
       );
       setCartItems((prevItems) => {
         const updatedCart = prevItems.filter(
