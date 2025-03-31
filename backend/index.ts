@@ -49,7 +49,7 @@ app.use(morgan("combined"));
 // ✅ Update CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://book-store-management-ts-1.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -61,7 +61,7 @@ app.use(
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' http://localhost:5000 data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+    "default-src 'self'; img-src 'self' https://book-store-management-ts-1.onrender.com data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
   );
   res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
