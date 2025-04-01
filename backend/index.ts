@@ -116,8 +116,9 @@ app.get(
           ...book,
           sellerId: product.user_id,
           productId: product._id,
-           image: `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
-            
+          image: book.image 
+      ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+      : null,
          },
       });
     } catch (error) {
@@ -151,7 +152,9 @@ app.get(
         ...product.toObject(),
         books: product.books.map((book: any) => ({
           ...book.toObject(),
-          image: `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`,
+          image: book.image 
+      ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+      : null,
         })),
       }));
 
