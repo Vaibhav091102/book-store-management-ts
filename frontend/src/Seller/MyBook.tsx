@@ -63,7 +63,7 @@ const MyBook: React.FC<MyBookProps> = ({ user }) => {
                     <img
                       src={
                         book.image
-                          ? `http://localhost:5000/${book.image}`
+                          ? `https://book-store-management-ts.onrender.com/${book.image}`
                           : "/placeholder.png"
                       }
                       alt={book.name}
