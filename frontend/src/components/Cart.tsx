@@ -197,7 +197,7 @@ const Cart: React.FC<CartProps> = ({ user, setCartLength }) => {
                     <td>
                       {item.book?.image ? (
                         <img
-                          src={`http://localhost:5000/${item.book.image.replace(
+                          src={`https://book-store-management-ts.onrender.com/${item.book.image.replace(
                             /\\/g,
                             "/"
                           )}`}
