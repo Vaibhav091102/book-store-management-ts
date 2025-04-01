@@ -113,7 +113,7 @@ const AuthorDetails: React.FC<AuthorDetailsProps> = ({ user, cartLength }) => {
                 >
                   <div className="text-center img-fluid">
                     <img
-                      src={`http://localhost:5000/${book.image}`}
+                      src={`https://book-store-management-ts.onrender.com/${book.image}`}
                       className="card-img-top"
                       alt={book.name}
                       style={{
