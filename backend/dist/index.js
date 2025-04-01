@@ -29,7 +29,7 @@ app.use(express_1.default.json());
 app.use((0, morgan_1.default)("combined"));
 // ✅ Update CORS
 app.use((0, cors_1.default)({
-    origin: "hhttps://book-store-management-ts-1.onrender.com",
+    origin: "https://book-store-management-ts-1.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -37,7 +37,7 @@ app.use((0, cors_1.default)({
 }));
 // ✅ Add CSP Headers
 app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "default-src 'self'; img-src 'self' https://book-store-management-ts-1.onrender.com data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
+    res.setHeader("Content-Security-Policy", "default-src 'self'; img-src 'self' https://book-store-management-ts-.onrender.com data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
     res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
     res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
@@ -81,8 +81,8 @@ app.get("/api/single-product-details/:bookId", async (req, res, next) => {
                 sellerId: product.user_id,
                 productId: product._id,
                 image: book.image
-                    ? `https://book-store-management-ts-1.onrender.com/${book.image.replace(/\\/g, "/")}`
-                    : "https://book-store-management-ts-1.onrender.com/default-image.jpg", // Fallback image
+                    ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+                    : "https://book-store-management-ts.onrender.com/default-image.jpg", // Fallback image
             },
         });
     }
@@ -110,7 +110,7 @@ app.get("/api/get-all-product", authMiddleware_1.default, async (req, res, next)
             ...product.toObject(),
             books: product.books.map((book) => ({
                 ...book.toObject(),
-                image: `https://book-store-management-ts-1.onrender.com/${book.image.replace(/\\/g, "/")}`,
+                image: `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`,
             })),
         }));
         res.status(200).json({
