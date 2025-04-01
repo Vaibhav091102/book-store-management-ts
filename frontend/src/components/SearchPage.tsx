@@ -100,7 +100,7 @@ const SearchPage = () => {
                       <img
                         src={
                           book.image
-                            ? `http://localhost:5000/${book.image.replace(
+                            ? `https://book-store-management-ts.onrender.com/${book.image.replace(
                                 /\\/g,
                                 "/"
                               )}`
