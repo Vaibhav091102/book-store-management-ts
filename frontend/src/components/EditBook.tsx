@@ -186,7 +186,7 @@ const EditBook = () => {
           {preview && (
             <div className="mb-3 text-center">
               <img
-                src={`${book.image}`}
+                src={`https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`}
                 alt="Preview"
                 style={{ maxWidth: "200px", maxHeight: "200px" }}
                 className="img-thumbnail"
