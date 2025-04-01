@@ -116,10 +116,9 @@ app.get(
           ...book,
           sellerId: product.user_id,
           productId: product._id,
-          image: book.image
-            ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
-            : "https://book-store-management-ts.onrender.com/default-image.jpg", // Fallback image
-        },
+          image: 
+            `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+                   },
       });
     } catch (error) {
       console.error("Error fetching product:", error);
