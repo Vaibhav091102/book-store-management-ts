@@ -20,7 +20,7 @@ const BookDetails: React.FC<BookDetailsProps> = ({
   const { bookId } = useParams<{ bookId: string }>();
   const [book, setBook] = useState<Book | null>(null);
   const navigate = useNavigate();
-  if (!user || !seller) {
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
 
