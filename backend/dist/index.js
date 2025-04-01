@@ -80,8 +80,9 @@ app.get("/api/single-product-details/:bookId", async (req, res, next) => {
                 ...book,
                 sellerId: product.user_id,
                 productId: product._id,
-                image:`https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
-                   
+                image: book.image 
+      ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+      : null,  
             },
         });
     }
@@ -109,7 +110,9 @@ app.get("/api/get-all-product", authMiddleware_1.default, async (req, res, next)
             ...product.toObject(),
             books: product.books.map((book) => ({
                 ...book.toObject(),
-                image: `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`,
+                image: book.image 
+      ? `https://book-store-management-ts.onrender.com/${book.image.replace(/\\/g, "/")}`
+      : null,
             })),
         }));
         res.status(200).json({
