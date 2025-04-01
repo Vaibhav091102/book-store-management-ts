@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema(
       {
         name: {
           type: String,
-          require: true,
+          required: true,
         },
         author: {
           type: String,
@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
 
         price: {
           type: Number,
-          require: true,
+          required: true,
         },
         summary: {
           type: String,
@@ -27,11 +27,11 @@ const productSchema = new mongoose.Schema(
 
         publisher: {
           type: String,
-          require: true,
+          required: true,
         },
         publishedYear: {
           type: Number,
-          require: true,
+          required: true,
         },
         availableCopies: {
           type: Number,
@@ -39,7 +39,7 @@ const productSchema = new mongoose.Schema(
         },
         image: {
           type: String,
-          require: true,
+          required: true,
         },
       },
     ],
